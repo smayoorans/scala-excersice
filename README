@@ -1,0 +1,24 @@
+This repository is created for the purpose of learning scala.
+
+-----------------------------------
+ To clone the project 
+
+git@github.com:smayoorans/scala-excersice.git
+
+or 
+
+https://github.com/smayoorans/scala-excersice.git
+-----------------------------------
+
+
+
+------------------------------------
+
+To run 
+
+cd scala-excersice
+
+./sbt
+update
+package
+run
