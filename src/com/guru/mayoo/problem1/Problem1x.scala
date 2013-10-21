@@ -9,7 +9,7 @@ package com.guru.mayoo.problem1
  */
 object Problem1x {
   def main(args: Array[String]) {
-       getMultiples(10);
+       getMultiples(1000);
   }
 
   def getMultiples(num : Int){

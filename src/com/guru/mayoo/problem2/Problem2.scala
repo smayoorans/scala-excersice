@@ -9,20 +9,18 @@ package com.guru.mayoo.problem2
  */
 object Problem2 {
 
-
-
   def main(args: Array[String]) {
-
+    println( "Fib number "+fib(10))
+  }
+  def fib1( n : Int) : Int = n match {
+    case 0 | 1 => n
+    case _ => fib1( n-1 ) + fib1( n-2 )
+  }
+  def fib (count: Int, low: BigInt=0, high: BigInt=1, fibnum: List[BigInt]=Nil): List[BigInt] = {
+    if (count == 0) (low :: fibnum).reverse
+    else
+      fib (count - 1, high, low + high, low :: fibnum)
   }
 
-  def fib(n:Int):BigInt = {
-    def fibs(n:Int):(BigInt,BigInt) = if (n == 1) (1,0) else {
-      val (a,b) = fibs(n/2)
-      val p = (2*b+a)*a
-      val q = a*a + b*b
-      if(n % 2 == 0) (p,q) else (p+q,p)
-    }
-    fibs(n)._1
-  }
 
 }
