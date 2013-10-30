@@ -1,12 +1,6 @@
 package com.guru.mayoo.problem1
 
-/**
- * Created with IntelliJ IDEA.
- * User: mayooran
- * Date: 10/15/13
- * Time: 4:06 PM
- * To change this template use File | Settings | File Templates.
- */
+
 object Problem1x {
   def main(args: Array[String]) {
        getMultiples(1000);
