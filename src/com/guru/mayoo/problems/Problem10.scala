@@ -1,33 +1,24 @@
 package com.guru.mayoo.problems
 
+
 object Problem10 {
 
-  def SumOfPrimes() {
-
-    var sum = 0
-    for(num <- 2 to 2000000){
-      if(isPrime(num)) sum = sum + num
-    }
-    println("Sum of prime numbers is:" + sum)
-  }
-
   def isPrime(n : Int) : Boolean = {
-    var i = 2
-    if (n == 2) {
-      return true
-    }
-    val sqrtN = math.sqrt(n)
-    while (i <= sqrtN) {
-      if (n % i == 0) {
-        return false
+      var i = 2
+      if (n == 2) return true
+
+      val sqrtN = math.sqrt(n)
+      while (i <= sqrtN) {
+        if (n % i == 0)  return false
+        i = i + 1
       }
-      i = i +1
-    }
-    true
+      true
   }
-
-
   def main(args: Array[String]) {
-    println("Sum of prime numbers " + SumOfPrimes)
+      var sum = 0
+      for(num <- 2 to 2000000){
+        if(isPrime(num)) sum = sum + num
+      }
+      println("Sum of prime numbers is:" + sum)
   }
 }
