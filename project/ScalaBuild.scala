@@ -11,14 +11,10 @@ object ScalaBuild extends Build {
   )
 
   object BuildSettings {
-    val buildOrganization = "odp"
-    val buildVersion      = "2.0.29"
-    val buildScalaVersion = "2.10.2"
-
     val buildSettings = Defaults.defaultSettings ++ Seq (
-      organization := buildOrganization,
-      version      := buildVersion,
-      scalaVersion := buildScalaVersion
+      organization := "Scala-Excersice",
+      version      := "1.0.1",
+      scalaVersion := "2.10.2"
     )
   }
 
