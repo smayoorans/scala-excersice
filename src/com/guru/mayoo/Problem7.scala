@@ -1,6 +1,4 @@
-package com.guru.mayoo.problems
-
-
+package com.guru.mayoo
 
 object Problem7 {
 
