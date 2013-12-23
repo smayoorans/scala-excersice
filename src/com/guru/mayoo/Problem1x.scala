@@ -1,9 +1,8 @@
-package com.guru.mayoo.problem1
-
+package com.guru.mayoo
 
 object Problem1x {
   def main(args: Array[String]) {
-       getMultiples(1000);
+       getMultiples(1000)
   }
 
   def getMultiples(num : Int){
