@@ -21,28 +21,41 @@ val numberString = Map(1 -> "one",
                   100 -> "hundred",
                   1000 -> "thousand")
 
-def printNumber(number : Int) = {
+def printNumber(number : Int) : String = {
 
   val strings = number match {
     case num if num <= 20 => numberString.get(num).get
-    case num if num > 20 && num < 99 =>
+
+    case num if num > 20 && num <= 99 =>
       val firstDigit = num.toString.charAt(0).toString.toInt
       val secondDigit = num.toString.charAt(1).toString.toInt
-      twoDigitPrefix()
+      secondDigitStrings(firstDigit)+" " +  numberString.get(secondDigit).getOrElse("")
 
-      firstDigit + " " + numberString.get(secondDigit).getOrElse("Number not valid")
+    case num if num >= 100 && num <= 999 =>
+      val firstDigit = num.toString.charAt(0).toString.toInt
+      val secondDigit = num.toString.charAt(1).toString.toInt
+      val thirdDigit = num.toString.charAt(2).toString.toInt
+      if (secondDigit == 1)  numberString.get(firstDigit).getOrElse("") + " hundred and "+  numberString.get((secondDigit.toString + thirdDigit.toString).toInt).getOrElse("")
+      else  numberString.get(firstDigit).getOrElse("") + " hundred and " + secondDigitStrings(secondDigit)+" " +  numberString.get(thirdDigit).getOrElse("")
   }
-  if(number <= 20) println(numberString.get(number).getOrElse("Number not valid"))
-  println("35=======> " + strings)
+
+  strings
 }
 
-def twoDigitPrefix() = {
+for ( i <- 1 to 999) println( printNumber(i))
+
+
+
+def secondDigitStrings(firstDigit : Int) : String = {
   firstDigit match {
+    case 2 => "twenty"
     case 3 => "thirty"
     case 4 => "forty"
     case 5 => "fifty"
-    case _ => "sixty"
+    case 6 => "sixty"
+    case 7 => "seventy"
+    case 8 => "eighty"
+    case 9 => "ninity"
+    case _ => ""
   }
 }
-
-printNumber(35)
